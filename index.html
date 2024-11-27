@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <h2 class="heading">Hello!! Buddy let's play with CountDown </h2>
+    <div class="inputing">
+        <br><br>
+        <label>Enter Your Count Down value </label>
+        <input type="tel" class="get">
+        <button onclick="starts()" class="btm">Start</button>
+
+    </div>
+
+
+
+    <div class="con">
+        <h1 class="data"></h1>
+    </div>
+
+    <script>
+        const display = () => {
+            var res = document.querySelector(".get").value;
+            var c = parseInt(res) + 1;
+
+            var datu = document.querySelector(".data");
+            var res = setInterval(() => {
+                c--;
+                datu.innerText = c;
+                if (c == 0) {
+                    clearInterval(res);
+                }
+            }, 1000)
+        }
+        const starts = () => {
+            var res = document.querySelector(".get").value;
+            var c = parseInt(res);
+            display();
+            var btm = document.querySelector(".con").style.display = 'block';
+            document.querySelector(".inputing").style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
